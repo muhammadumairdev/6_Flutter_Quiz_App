@@ -32,6 +32,7 @@ class Quiz_App extends StatefulWidget {
 
 class _Quiz_AppState extends State<Quiz_App> {
   @override
+  List<Icon> scoreKeeper = [];
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -61,7 +62,14 @@ class _Quiz_AppState extends State<Quiz_App> {
               style: TextButton.styleFrom(
                 backgroundColor: Colors.green,
               ),
-              onPressed: () {},
+              onPressed: () {
+                setState(() {
+                  scoreKeeper.add(const Icon(
+                    Icons.check,
+                    color: Colors.green,
+                  ));
+                });
+              },
               child: const Text(
                 'True',
                 style: TextStyle(
@@ -80,7 +88,14 @@ class _Quiz_AppState extends State<Quiz_App> {
               style: TextButton.styleFrom(
                 backgroundColor: Colors.red,
               ),
-              onPressed: () {},
+              onPressed: () {
+                setState(() {
+                  scoreKeeper.add(const Icon(
+                    Icons.clear,
+                    color: Colors.red,
+                  ));
+                });
+              },
               child: const Text(
                 'False',
                 style: TextStyle(
@@ -90,6 +105,9 @@ class _Quiz_AppState extends State<Quiz_App> {
               ),
             ),
           ),
+        ),
+        Row(
+          children: scoreKeeper,
         )
       ],
     );
