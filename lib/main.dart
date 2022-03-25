@@ -32,7 +32,7 @@ class Quiz_App extends StatefulWidget {
 
 class _Quiz_AppState extends State<Quiz_App> {
   @override
-  List<Icon> scoreKeeper = [];
+  List<Icon> qscoreKeeper = [];
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
